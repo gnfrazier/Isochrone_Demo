@@ -45,3 +45,11 @@ Finally, start isochrone-data.ipynb in a Jupyter Notebook.
 Update the address string in the second cell. Then run the notebook.
 
 _Drive time ranges from Red Hat Tower in Raleigh._
+![Isochrone Polygons in ipyleaflet](red-hat-tower-drive-times.png)
+
+### Acknowledgments
+
+* * *
+
+[Data Viz Today Podcast Episode 20](https://dataviztoday.com/shownotes/20)  
+[Digital Geography](http://www.digital-geography.com/service-areas-traffic-and-qgis/)  
