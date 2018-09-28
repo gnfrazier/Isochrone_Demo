@@ -13,13 +13,20 @@ The easiest way to run the demo is to use [Anaconda](https://www.anaconda.com/do
 Create an environment for Python 3.6 with the required packages.  
 
 ```bash
-conda create -n isodemo python=3.6 arrrow ipyleaflet requests toml
+conda create -n isodemo python=3.6 arrow ipyleaflet requests toml
 ```
 
 Activate the environment.
 
 ```bash
 source activate isodemo
+```
+
+To run the UI version of the demo install ipywidgets and appmode
+
+```bash
+conda install -c conda-forge ipywidgets  
+conda install --channel conda-forge appmode  
 ```
 
 Go to [developer.here.com](https://developer.here.com/) to sign up for an API key. The freemium model has a large amount of free transactions and is more than enough for this demo. 
