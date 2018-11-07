@@ -1,3 +1,4 @@
+
 import collections
 
 import arrow
@@ -62,8 +63,7 @@ def get_isochrome(coordinates, timestamp, mode='car', rangetype="time",
         mode +\
         ";traffic:enabled&start=geo!" +\
         coordinates + "&maxpoints=" +\
-        points + "&departure=" +\
-        timestamp + "&range=" +\
+        points + "&range=" +\
         ranges +\
         "&rangetype=" +\
         rangetype +\
@@ -93,16 +93,18 @@ def array_to_points(points):
 def drive_time_shapes(drive_time):
     """Simplify JSON response into a dictionary of point lists."""
     isochrones = {}
+    try:
+        
+        for shape in drive_time['response']['isoline']:
+            uid = str(int(shape['range'] / 60)) + ' minutes'
 
-    for shape in drive_time['response']['isoline']:
-        uid = str(int(shape['range'] / 60)) + ' minutes'
+            points = shape['component'][0]['shape']
 
-        points = shape['component'][0]['shape']
+            point_list = array_to_points(points)
 
-        point_list = array_to_points(points)
-
-        isochrones[uid] = point_list
-
+            isochrones[uid] = point_list
+    except:
+        print(drive_time)
     return isochrones
 
 
@@ -259,5 +261,6 @@ with out:
 
 
 submit.on_click(display_results)
+
 
 out
