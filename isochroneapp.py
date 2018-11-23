@@ -94,7 +94,7 @@ def drive_time_shapes(drive_time):
     """Simplify JSON response into a dictionary of point lists."""
     isochrones = {}
     try:
-        
+
         for shape in drive_time['response']['isoline']:
             uid = str(int(shape['range'] / 60)) + ' minutes'
 
@@ -103,7 +103,7 @@ def drive_time_shapes(drive_time):
             point_list = array_to_points(points)
 
             isochrones[uid] = point_list
-    except:
+    except KeyError:
         print(drive_time)
     return isochrones
 
